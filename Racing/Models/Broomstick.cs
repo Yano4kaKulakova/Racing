@@ -9,6 +9,11 @@ namespace Racing.Models;
 
 public class Broomstick : IAirVehicle
 {
+    public Broomstick(double speed)
+    {
+        Speed = speed;
+    }
+
     public double Speed { get ; set ; }
     public string Name { get; } = "Метла";
 

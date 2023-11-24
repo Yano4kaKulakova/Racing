@@ -9,6 +9,12 @@ namespace Racing.Models;
 
 public class BootsFastwalkers : IGroundVehicle
 {
+    public BootsFastwalkers(double drivingTime, double speed)
+    {
+        DrivingTime = drivingTime;
+        Speed = speed;
+    }
+
     public double DrivingTime { get ; set ; }
     public double Speed { get ; set ; }
     public string Name { get; } = "Сапоги-скороходы";

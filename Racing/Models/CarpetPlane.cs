@@ -9,6 +9,11 @@ namespace Racing.Models;
 
 public class CarpetPlane : IAirVehicle
 {
+    public CarpetPlane(double speed)
+    {
+        Speed = speed;
+    }
+
     public double Speed { get ; set ; }
     public string Name { get; } = "Ковер-самолет";
 

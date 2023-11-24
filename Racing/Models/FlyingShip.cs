@@ -9,6 +9,11 @@ namespace Racing.Models;
 
 public class FlyingShip : IAirVehicle
 {
+    public FlyingShip(double speed)
+    {
+        Speed = speed;
+    }
+
     public double Speed { get ; set ; }
     public string Name { get; } = "Летучий корабль";
 
