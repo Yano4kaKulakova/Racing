@@ -11,6 +11,8 @@ public class CarriagePumpkin : IGroundVehicle
 {
     public double DrivingTime { get ; set ; }
     public double Speed { get ; set ; }
+    public string Name { get; } = "Карета-тыква";
+
 
     public double GetRestTime(int idxStop)
     {

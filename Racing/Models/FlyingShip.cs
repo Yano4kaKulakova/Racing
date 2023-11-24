@@ -10,6 +10,8 @@ namespace Racing.Models;
 public class FlyingShip : IAirVehicle
 {
     public double Speed { get ; set ; }
+    public string Name { get; } = "Летучий корабль";
+
 
     public double GetAcceleration(double traceDistance)
     {

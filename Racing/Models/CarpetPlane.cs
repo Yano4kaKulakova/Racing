@@ -10,6 +10,8 @@ namespace Racing.Models;
 public class CarpetPlane : IAirVehicle
 {
     public double Speed { get ; set ; }
+    public string Name { get; } = "Ковер-самолет";
+
 
     public double GetAcceleration(double traceDistance)
     {

@@ -10,6 +10,8 @@ namespace Racing.Models;
 public class Broomstick : IAirVehicle
 {
     public double Speed { get ; set ; }
+    public string Name { get; } = "Метла";
+
 
     public double GetAcceleration(double traceDistance)
     {

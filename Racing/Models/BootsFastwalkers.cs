@@ -11,6 +11,8 @@ public class BootsFastwalkers : IGroundVehicle
 {
     public double DrivingTime { get ; set ; }
     public double Speed { get ; set ; }
+    public string Name { get; } = "Сапоги-скороходы";
+
 
     public double GetRestTime(int idxStop)
     {

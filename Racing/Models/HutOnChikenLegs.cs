@@ -17,6 +17,8 @@ public class HutOnChikenLegs : IGroundVehicle
 
     public double DrivingTime { get ; set ; }
     public double Speed { get ; set ; }
+    public string Name { get; } = "Избушка на курьих ножках";
+
     public double GetRestTime(int idxStop)
     {
         return 2 * Math.Pow(idxStop, 2) - 4 * idxStop + 3;

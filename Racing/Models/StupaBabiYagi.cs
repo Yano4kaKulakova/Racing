@@ -15,6 +15,7 @@ public class StupaBabiYagi : IAirVehicle
     }
 
     public double Speed { get; set; }
+    public string Name { get; } = "Ступа Бабы Яги";
 
     public double GetAcceleration(double traceDistance)
     {

@@ -11,6 +11,8 @@ public class Centaur : IGroundVehicle
 {
     public double DrivingTime { get ; set ; }
     public double Speed { get ; set ; }
+    public string Name { get; } = "Кентавр";
+
 
     public double GetRestTime(int idxStop)
     {

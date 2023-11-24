@@ -9,6 +9,7 @@ namespace Racing.Interfaces;
 public interface IVehicle
 {
     double Speed { get; set; }
+    string Name { get; }
 }
 
 public interface IGroundVehicle : IVehicle
