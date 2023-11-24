@@ -1,6 +1,7 @@
 using Racing.Data;
 using Racing.Interfaces;
 using Racing.Models;
+using Racing.Services;
 using System.Windows.Forms;
 
 namespace Racing
@@ -218,6 +219,42 @@ namespace Racing
             }
 
             ViewCountVehicles();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (vehicles.Count == 0) MessageBox.Show("Транспортные средства не выбраны!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ITrack track;
+            switch (_type)
+            {
+                case (int)TYPE_RACE.GROUND:
+                    var ground = vehicles.OfType<IGroundVehicle>().ToList();
+                    track = new GroundTrack((double)trackBar1.Value * 100, ground);
+                    FillDataGrid(track);
+                    break;
+
+                case (int)TYPE_RACE.AIR:
+                    var air = vehicles.OfType<IAirVehicle>().ToList();
+                    track = new AirTrack((double)trackBar1.Value * 100, air);
+                    FillDataGrid(track);
+                    break;
+
+                case (int)TYPE_RACE.MIXED:
+                    var g = vehicles.OfType<IGroundVehicle>().ToList();
+                    var a = vehicles.OfType<IAirVehicle>().ToList();
+                    track = new MixedTrack((double)trackBar1.Value * 100, g, a);
+                    FillDataGrid(track);
+                    break;
+
+                default:
+                    return;
+            }            
+        }
+
+        private void FillDataGrid(ITrack track)
+        {
+            RaceService srv = new RaceService(track);
+            var dict = srv.StartRace();
         }
     }
 }
