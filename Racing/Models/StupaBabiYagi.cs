@@ -1,4 +1,5 @@
-﻿using Racing.Interfaces;
+﻿using Racing.Data;
+using Racing.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,11 @@ public class StupaBabiYagi : IAirVehicle
     }
 
     public double Speed { get; set; }
-    public string Name { get; } = "Ступа Бабы Яги";
+    public string Name { get; } = VehicleNames.StupaBabiYagi;
+
 
     public double GetAcceleration(double traceDistance)
     {
-        return Math.Sin(traceDistance) * 10;
+        return traceDistance / 500;
     }
 }

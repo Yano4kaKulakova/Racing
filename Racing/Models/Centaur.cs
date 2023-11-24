@@ -1,4 +1,5 @@
-﻿using Racing.Interfaces;
+﻿using Racing.Data;
+using Racing.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ public class Centaur : IGroundVehicle
 
     public double DrivingTime { get ; set ; }
     public double Speed { get ; set ; }
-    public string Name { get; } = "Кентавр";
+    public string Name { get; } = VehicleNames.Centaur;
+
 
 
     public double GetRestTime(int idxStop)

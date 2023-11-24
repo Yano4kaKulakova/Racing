@@ -1,4 +1,5 @@
-﻿using Racing.Interfaces;
+﻿using Racing.Data;
+using Racing.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ public class HutOnChikenLegs : IGroundVehicle
 
     public double DrivingTime { get ; set ; }
     public double Speed { get ; set ; }
-    public string Name { get; } = "Избушка на курьих ножках";
+    public string Name { get; } = VehicleNames.HutOnChikenLegs;
+
 
     public double GetRestTime(int idxStop)
     {

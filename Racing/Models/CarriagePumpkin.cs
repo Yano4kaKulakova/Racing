@@ -1,4 +1,5 @@
-﻿using Racing.Interfaces;
+﻿using Racing.Data;
+using Racing.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ public class CarriagePumpkin : IGroundVehicle
 
     public double DrivingTime { get ; set ; }
     public double Speed { get ; set ; }
-    public string Name { get; } = "Карета-тыква";
+    public string Name { get; } = VehicleNames.CarriagePumpkin;
+
 
 
     public double GetRestTime(int idxStop)

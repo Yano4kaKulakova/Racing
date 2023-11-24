@@ -77,7 +77,7 @@ public class RaceService
         Dictionary<string, double> dictionary = new Dictionary<string, double>();
         foreach (var vehicle in airVehicles)
         {
-            double time = vehicle.Speed / vehicle.GetAcceleration(distance);
+            double time = distance / (vehicle.Speed + vehicle.GetAcceleration(distance) * vehicle.Speed);
             dictionary.Add(vehicle.Name, time);
         }
         return dictionary.OrderBy(o => o.Value).ToDictionary(x => x.Key, x => x.Value);

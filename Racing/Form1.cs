@@ -16,22 +16,10 @@ namespace Racing
             InitializeComponent();
 
             vehicles = new List<IVehicle>();
-            //{
-            //    new StupaBabiYagi(12),
-            //    new HutOnChikenLegs(14, 20),
-            //    new FlyingShip(10),
-            //    new Centaur(15,15),
-            //    new CarriagePumpkin(11,17),
-            //    new CarpetPlane(15),
-            //    new Broomstick(11),
-            //    new BootsFastwalkers(13,19)
-            //};
-
             radioButton1.Checked = true;
             label_count.Text = "Выбрано: 0";
         }
 
-        // Ground
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             _type = (int)TYPE_RACE.GROUND;
@@ -40,7 +28,6 @@ namespace Racing
             Reset();
         }
 
-        // Air
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             _type = (int)TYPE_RACE.AIR;
@@ -49,7 +36,6 @@ namespace Racing
             Reset();
         }
 
-        // Mixed
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             _type = (int)TYPE_RACE.MIXED;
@@ -76,150 +62,76 @@ namespace Racing
             centaur_checkBox.Checked = false;
         }
 
-        // Events checkbox
-        private void stupa_checkBox_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxChanged(bool isChecked, string vehicle)
         {
-            var isChecked = ((CheckBox)sender).Checked;
-            if (isChecked) vehicles.Add(new StupaBabiYagi(12));
+            if (isChecked)
+            {
+                if (vehicle == VehicleNames.StupaBabiYagi) vehicles.Add(new StupaBabiYagi(12));
+                else if (vehicle == VehicleNames.Broomstick) vehicles.Add(new Broomstick(11));
+                else if (vehicle == VehicleNames.CarpetPlane) vehicles.Add(new CarpetPlane(15));
+                else if (vehicle == VehicleNames.FlyingShip) vehicles.Add(new FlyingShip(10));
+                else if (vehicle == VehicleNames.BootsFastwalkers) vehicles.Add(new BootsFastwalkers(13, 19));
+                else if (vehicle == VehicleNames.HutOnChikenLegs) vehicles.Add(new HutOnChikenLegs(14, 20));
+                else if (vehicle == VehicleNames.Centaur) vehicles.Add(new Centaur(15, 15));
+                else if (vehicle == VehicleNames.CarriagePumpkin) vehicles.Add(new CarriagePumpkin(11, 17));
+            }
             else
             {
-                IVehicle stupaBabiYagi = vehicles.FirstOrDefault(v => v is StupaBabiYagi);
-
-                // Если объект найден, удаляем его из списка
-                if (stupaBabiYagi != null)
-                {
-                    vehicles.Remove(stupaBabiYagi);
-                }
+                IVehicle obj = vehicles.FirstOrDefault(v => v.Name == vehicle);
+                if (obj != null) vehicles.Remove(obj);
             }
 
             ViewCountVehicles();
+        }
+
+        private void stupa_checkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            var isChecked = ((CheckBox)sender).Checked;
+            CheckBoxChanged(isChecked, VehicleNames.StupaBabiYagi);
         }
 
         private void broom_checkBox_CheckedChanged(object sender, EventArgs e)
         {
             var isChecked = ((CheckBox)sender).Checked;
-            if (isChecked) vehicles.Add(new Broomstick(11));
-            else
-            {
-                IVehicle broomstick = vehicles.FirstOrDefault(v => v is Broomstick);
-
-                // Если объект найден, удаляем его из списка
-                if (broomstick != null)
-                {
-                    vehicles.Remove(broomstick);
-                }
-            }
-
-            ViewCountVehicles();
+            CheckBoxChanged(isChecked, VehicleNames.Broomstick);
         }
 
         private void carpet_checkBox_CheckedChanged(object sender, EventArgs e)
         {
             var isChecked = ((CheckBox)sender).Checked;
-            if (isChecked) vehicles.Add(new CarpetPlane(15));
-            else
-            {
-                IVehicle carpet = vehicles.FirstOrDefault(v => v is CarpetPlane);
-
-                // Если объект найден, удаляем его из списка
-                if (carpet != null)
-                {
-                    vehicles.Remove(carpet);
-                }
-            }
-
-            ViewCountVehicles();
+            CheckBoxChanged(isChecked, VehicleNames.CarpetPlane);
         }
 
         private void flyingShip_checkBox_CheckedChanged(object sender, EventArgs e)
         {
             var isChecked = ((CheckBox)sender).Checked;
-            if (isChecked) vehicles.Add(new FlyingShip(10));
-            else
-            {
-                IVehicle ship = vehicles.FirstOrDefault(v => v is FlyingShip);
-
-                // Если объект найден, удаляем его из списка
-                if (ship != null)
-                {
-                    vehicles.Remove(ship);
-                }
-            }
-
-            ViewCountVehicles();
+            CheckBoxChanged(isChecked, VehicleNames.FlyingShip);
         }
 
         private void boots_checkBox_CheckedChanged(object sender, EventArgs e)
         {
             var isChecked = ((CheckBox)sender).Checked;
-            if (isChecked) vehicles.Add(new BootsFastwalkers(13, 19));
-            else
-            {
-                IVehicle boots = vehicles.FirstOrDefault(v => v is BootsFastwalkers);
-
-                // Если объект найден, удаляем его из списка
-                if (boots != null)
-                {
-                    vehicles.Remove(boots);
-                }
-            }
-
-            ViewCountVehicles();
+            CheckBoxChanged(isChecked, VehicleNames.BootsFastwalkers);
         }
 
         private void chiken_checkBox_CheckedChanged(object sender, EventArgs e)
         {
             var isChecked = ((CheckBox)sender).Checked;
-            if (isChecked) vehicles.Add(new HutOnChikenLegs(14, 20));
-            else
-            {
-                IVehicle chiken = vehicles.FirstOrDefault(v => v is HutOnChikenLegs);
-
-                // Если объект найден, удаляем его из списка
-                if (chiken != null)
-                {
-                    vehicles.Remove(chiken);
-                }
-            }
-
-            ViewCountVehicles();
+            CheckBoxChanged(isChecked, VehicleNames.HutOnChikenLegs);
         }
 
         private void centaur_checkBox_CheckedChanged(object sender, EventArgs e)
         {
             var isChecked = ((CheckBox)sender).Checked;
-            if (isChecked) vehicles.Add(new Centaur(15, 15));
-            else
-            {
-                IVehicle centaur = vehicles.FirstOrDefault(v => v is Centaur);
-
-                // Если объект найден, удаляем его из списка
-                if (centaur != null)
-                {
-                    vehicles.Remove(centaur);
-                }
-            }
-
-            ViewCountVehicles();
+            CheckBoxChanged(isChecked, VehicleNames.Centaur);
         }
 
         private void pumpkin_checkBox_CheckedChanged(object sender, EventArgs e)
         {
             var isChecked = ((CheckBox)sender).Checked;
-            if (isChecked) vehicles.Add(new CarriagePumpkin(11, 17));
-            else
-            {
-                IVehicle pumpkin = vehicles.FirstOrDefault(v => v is CarriagePumpkin);
-
-                // Если объект найден, удаляем его из списка
-                if (pumpkin != null)
-                {
-                    vehicles.Remove(pumpkin);
-                }
-            }
-
-            ViewCountVehicles();
+            CheckBoxChanged(isChecked, VehicleNames.CarriagePumpkin);
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -255,6 +167,18 @@ namespace Racing
         {
             RaceService srv = new RaceService(track);
             var dict = srv.StartRace();
+            dataGridView1.Rows.Clear();
+
+            int idx = 0;
+            foreach (var d in dict)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1[0, idx].Value = d.Key;
+                dataGridView1[1, idx].Value = Math.Round(d.Value, 2);
+                dataGridView1[2, idx].Value = idx + 1;
+                idx++;
+            }
+
         }
     }
 }

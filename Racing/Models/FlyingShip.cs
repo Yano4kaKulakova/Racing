@@ -1,4 +1,5 @@
-﻿using Racing.Interfaces;
+﻿using Racing.Data;
+using Racing.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,12 @@ public class FlyingShip : IAirVehicle
     }
 
     public double Speed { get ; set ; }
-    public string Name { get; } = "Летучий корабль";
+    public string Name { get; } = VehicleNames.FlyingShip;
+
 
 
     public double GetAcceleration(double traceDistance)
     {
-        return Math.Log(traceDistance);
+        return Math.Log(traceDistance) / 10;
     }
 }

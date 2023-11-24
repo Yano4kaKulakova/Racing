@@ -1,4 +1,5 @@
-﻿using Racing.Interfaces;
+﻿using Racing.Data;
+using Racing.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,12 @@ public class Broomstick : IAirVehicle
     }
 
     public double Speed { get ; set ; }
-    public string Name { get; } = "Метла";
+    public string Name { get; } = VehicleNames.Broomstick;
+
 
 
     public double GetAcceleration(double traceDistance)
     {
-        return Math.Exp(traceDistance);
+        return Math.Pow((traceDistance / 500), 2);
     }
 }
