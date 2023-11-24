@@ -46,14 +46,24 @@
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
             dataGridView1 = new DataGridView();
-            MyCheckBox = new DataGridViewCheckBoxColumn();
             NameVehicle = new DataGridViewTextBoxColumn();
-            Type = new DataGridViewTextBoxColumn();
             Time = new DataGridViewTextBoxColumn();
             Result = new DataGridViewTextBoxColumn();
+            groupBox2 = new GroupBox();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
+            checkBox6 = new CheckBox();
+            checkBox7 = new CheckBox();
+            checkBox8 = new CheckBox();
+            label12 = new Label();
+            label13 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -236,31 +246,18 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { MyCheckBox, NameVehicle, Type, Time, Result });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 123);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NameVehicle, Time, Result });
+            dataGridView1.Location = new Point(457, 123);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(800, 327);
+            dataGridView1.Size = new Size(343, 327);
             dataGridView1.TabIndex = 1;
-            // 
-            // MyCheckBox
-            // 
-            MyCheckBox.HeaderText = "";
-            MyCheckBox.Name = "MyCheckBox";
-            MyCheckBox.ReadOnly = true;
             // 
             // NameVehicle
             // 
             NameVehicle.HeaderText = "Транспортное средство";
             NameVehicle.Name = "NameVehicle";
             NameVehicle.ReadOnly = true;
-            // 
-            // Type
-            // 
-            Type.HeaderText = "Тип";
-            Type.Name = "Type";
-            Type.ReadOnly = true;
             // 
             // Time
             // 
@@ -273,11 +270,130 @@
             Result.HeaderText = "Результат";
             Result.Name = "Result";
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(label13);
+            groupBox2.Controls.Add(label12);
+            groupBox2.Controls.Add(checkBox7);
+            groupBox2.Controls.Add(checkBox8);
+            groupBox2.Controls.Add(checkBox4);
+            groupBox2.Controls.Add(checkBox5);
+            groupBox2.Controls.Add(checkBox6);
+            groupBox2.Controls.Add(checkBox3);
+            groupBox2.Controls.Add(checkBox2);
+            groupBox2.Controls.Add(checkBox1);
+            groupBox2.Dock = DockStyle.Left;
+            groupBox2.Location = new Point(0, 123);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(451, 327);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Транспортные средства";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(12, 90);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(112, 19);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "Ступа Бабы Яги";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(12, 115);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(61, 19);
+            checkBox2.TabIndex = 1;
+            checkBox2.Text = "Метла";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(163, 90);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(132, 19);
+            checkBox3.TabIndex = 2;
+            checkBox3.Text = "Сапоги-скороходы";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(163, 137);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(177, 19);
+            checkBox4.TabIndex = 5;
+            checkBox4.Text = "Избушка на курьих ножках";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(12, 137);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(110, 19);
+            checkBox5.TabIndex = 4;
+            checkBox5.Text = "Ковер-самолет";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(163, 112);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(100, 19);
+            checkBox6.TabIndex = 3;
+            checkBox6.Text = "Карета-тыква";
+            checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            checkBox7.AutoSize = true;
+            checkBox7.Location = new Point(12, 160);
+            checkBox7.Name = "checkBox7";
+            checkBox7.Size = new Size(121, 19);
+            checkBox7.TabIndex = 7;
+            checkBox7.Text = "Летучий корабль";
+            checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            checkBox8.AutoSize = true;
+            checkBox8.Location = new Point(163, 160);
+            checkBox8.Name = "checkBox8";
+            checkBox8.Size = new Size(70, 19);
+            checkBox8.TabIndex = 6;
+            checkBox8.Text = "Кентавр";
+            checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(27, 50);
+            label12.Name = "label12";
+            label12.Size = new Size(71, 15);
+            label12.TabIndex = 8;
+            label12.Text = "Воздушные";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(218, 50);
+            label13.Name = "label13";
+            label13.Size = new Size(64, 15);
+            label13.TabIndex = 9;
+            label13.Text = "Наземные";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(groupBox2);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
             Name = "Form1";
@@ -286,6 +402,8 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -309,10 +427,19 @@
         private Label label1;
         private Button button1;
         private DataGridView dataGridView1;
-        private DataGridViewCheckBoxColumn MyCheckBox;
         private DataGridViewTextBoxColumn NameVehicle;
-        private DataGridViewTextBoxColumn Type;
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Result;
+        private GroupBox groupBox2;
+        private CheckBox checkBox2;
+        private CheckBox checkBox1;
+        private Label label13;
+        private Label label12;
+        private CheckBox checkBox7;
+        private CheckBox checkBox8;
+        private CheckBox checkBox4;
+        private CheckBox checkBox5;
+        private CheckBox checkBox6;
+        private CheckBox checkBox3;
     }
 }
